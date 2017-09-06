@@ -16,7 +16,7 @@
     <aop:aspectj-autoproxy/>
 
     <!-- 自动扫面com.springmvc目录及其子目录下面所有类文件，自动注入所有带注解的类 -->
-    <context:component-scan base-package="com.springmvc.*"/>
+    <context:component-scan base-package="com.tian.*"/>
 
     <context:annotation-config/>
 
@@ -67,7 +67,7 @@
         </property>
     </bean>
     <bean id="mappingJacksonHttpMessageConverter"
-          class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"/>
+          class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
     <bean id="mappingStringHttpMessageConverter" class="org.springframework.http.converter.StringHttpMessageConverter"/>
 
     <!-- spring文件上传编码 -->

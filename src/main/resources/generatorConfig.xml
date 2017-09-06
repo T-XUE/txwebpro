@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <classPathEntry
+            location="E:\maven\repo\mysql\mysql-connector-java\5.1.39\mysql-connector-java-5.1.39.jar"/>
+    <context id="microbank" targetRuntime="MyBatis3">
+        <property name="javaFileEncoding" value="utf-8"/>
+
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"></plugin>
+        <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"></plugin>
+        <!--<plugin type="com.springmvc.util.CustomModelPlugin"></plugin>-->
+
+
+        <!-- 关闭注解信息 -->
+        <commentGenerator>
+            <!-- 是否取消注释 -->
+            <property name="suppressAllComments" value="false"/>
+        </commentGenerator>
+
+        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver"-->
+        <!--connectionURL="jdbc:mysql://192.169.2.245:5600/born_henan?characterEncoding=UTF8"-->
+        <!--userId="root"-->
+        <!--password="efHK1dKh3sd">-->
+        <!--</jdbcConnection>-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/born_microbank_yucai?characterEncoding=UTF8"
+                        userId="root"
+                        password="123456">
+        </jdbcConnection>
+
+        <!-- 类型转换 -->
+        <javaTypeResolver>
+            <!-- 是否使用bigDecimal， false可自动转化以下类型（Long, Integer, Short, etc.） -->
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <!-- 生成实体类地址 -->
+        <javaModelGenerator targetPackage="com.springmvc.model" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!-- 生成mapxml文件 -->
+        <sqlMapGenerator targetPackage="mybatis.xml" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <!-- 生成mapxml对应client，也就是接口dao -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.springmvc.mapper"
+                             targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!--&lt;!&ndash; 配置表信息，这里没生成一张表，这里需要改变一次对应表名 &ndash;&gt;-->
+        <!--<table schema="born_microbank_yucai" tableName="user_base_info"-->
+        <!--domainObjectName="UserBaseInfo" enableCountByExample="false"-->
+        <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+        <!--enableUpdateByExample="false">-->
+        <!--&lt;!&ndash; schema即为数据库名 tableName为对应的数据库表 domainObjectName是要生成的实体类 enable*ByExample-->
+        <!--是否生成 example类   &ndash;&gt;-->
+
+        <!--&lt;!&ndash; 忽略列，不生成bean 字段-->
+        <!--<ignoreColumn column="FRED" />&ndash;&gt;-->
+        <!--&lt;!&ndash; 指定列的java数据类型&ndash;&gt;-->
+        <!--<columnOverride column="store_codes" jdbcType="VARCHAR" />-->
+        <!--<columnOverride column="sale_codes" jdbcType="VARCHAR" />-->
+        <!--</table>-->
+
+        <table tableName="user_base_info">
+            <generatedKey column="user_base_id" sqlStatement="SELECT LAST_INSERT_ID()"/>
+            <columnOverride column="store_codes" jdbcType="VARCHAR" />
+            <columnOverride column="sale_codes" jdbcType="VARCHAR" />
+        </table>
+    </context>
+</generatorConfiguration>
