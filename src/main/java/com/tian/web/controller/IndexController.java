@@ -20,8 +20,8 @@ public class IndexController {
 
     private final String vm_path = "/";
 
-//    @Autowired
-//    private UserBaseInfoMapper userBaseInfoMapper;
+    @Autowired
+    private UserBaseInfoMapper userBaseInfoMapper;
 
     @RequestMapping("/")
     public String index(Model model, HttpServletRequest request, HttpServletResponse response) {
@@ -35,8 +35,8 @@ public class IndexController {
                            @PathVariable String service) {
         logger.info("进入页面{}", service);
         model.addAttribute("service", service);
-//        UserBaseInfo userBaseInfo = userBaseInfoMapper.selectByPrimaryKey("17063007835");
-//        model.addAttribute("userBaseInfo", userBaseInfo);
+        UserBaseInfo userBaseInfo = userBaseInfoMapper.selectByPrimaryKey("17063007835");
+        model.addAttribute("userBaseInfo", userBaseInfo);
         return vm_path + "front/" + service + ".vm";
     }
 

@@ -87,7 +87,7 @@
 	<!-- 2.1  spring 自动注册 mybatis 的映射文件配置 （mappers.mapper 节点内容） -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<!-- 映射文件中，mapper.namespace 属性值“接口”的基础包名 -->
-		<property name="basePackage" value="com.springmvc.*" />
+		<property name="basePackage" value="com.tian.*" />
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
 	</bean>
 
