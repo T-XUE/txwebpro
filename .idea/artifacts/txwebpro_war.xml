@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="txwebpro:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="txwebpro.war">
+      <element id="artifact" artifact-name="txwebpro:war exploded" />
+    </root>
+  </artifact>
+</component>

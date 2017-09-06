@@ -15,7 +15,7 @@
     <!-- 注册aop功能 -->
     <aop:aspectj-autoproxy/>
 
-    <!-- 自动扫面com.springmvc目录及其子目录下面所有类文件，自动注入所有带注解的类 -->
+    <!-- 自动扫面com.tian，自动注入所有带注解的类 -->
     <context:component-scan base-package="com.tian.*"/>
 
     <context:annotation-config/>
