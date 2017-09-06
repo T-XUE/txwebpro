@@ -39,7 +39,7 @@
         </javaTypeResolver>
 
         <!-- 生成实体类地址 -->
-        <javaModelGenerator targetPackage="com.springmvc.model" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="com.tian.model" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
@@ -50,7 +50,7 @@
         </sqlMapGenerator>
 
         <!-- 生成mapxml对应client，也就是接口dao -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.springmvc.mapper"
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.tian.mapper"
                              targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
