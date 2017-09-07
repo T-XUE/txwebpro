@@ -67,6 +67,8 @@
           <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:1.3.2" />
           <element id="library" level="project" name="Maven: commons-io:commons-io:2.2" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.43" />
+          <element id="library" level="module" name="Maven: com.alibaba:jconsole:1.8.0" module-name="txwebpro" />
+          <element id="library" level="module" name="Maven: com.alibaba:tools:1.8.0" module-name="txwebpro" />
         </element>
       </element>
       <element id="directory" name="META-INF">
